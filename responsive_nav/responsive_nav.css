@@ -1,0 +1,116 @@
+/* -----------------------------------
+Basic rules
+
+
+/* -----------------------------------
+Navigation
+----------------------------------- */
+
+#nav ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    list-style: none;
+    line-height: 1;
+}
+
+#nav li {
+    display: inline;
+}
+
+#nav a {
+    display: block;
+    padding: .5em;
+    color: white;
+    background-color: #E2211C;
+    border-top: 1px #FF615F solid;
+    text-decoration: none;
+}
+
+#nav-toggle {
+    display: block;
+    padding: .5em .5em .5em 40px;
+    color: white;
+    height: 2em;
+    background-color: #E2211C;
+    background-image: url(responsive_nav.svg);
+    background-size: 21px;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+    text-decoration: none;
+}
+
+#nav a:focus,
+#nav-toggle:focus,
+#nav a:hover,
+#nav-toggle:hover {
+    background-color: #FF615F;
+}
+
+#nav a:not([href]) {
+        cursor: pointer;
+        color: #E2211C;
+        background-color: white;
+    }
+
+/* -----------------------------------
+Predefined
+----------------------------------- */
+
+.js #nav {
+    clip: rect(0 0 0 0);
+    max-height: 0;
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    zoom: 1;
+}
+
+#nav.opened {
+    max-height: 9999px;
+}
+
+/* -----------------------------------
+Navigation wide screen
+----------------------------------- */
+
+@media (min-width: 750px) {
+    .js #nav {
+        position: relative;
+    }
+
+    .js #nav.closed {
+        max-height: none;
+    }
+
+    #nav-toggle {
+        display: none;
+    }
+
+    #nav {
+        overflow: hidden;
+        zoom: 1;
+        background-color: white;
+        text-align: center;
+    }
+
+    #nav a {
+        display: block;
+        padding: 1em;
+        font-size: 1.2em;
+        color: #616166;
+        background-color: white;
+        border-top: 0;
+        border-collapse: collapse;
+    }
+    
+    #nav a:focus, #nav a:hover {
+        background-color: #E8E8F2;
+    }
+    
+    #nav a:not([href]) {
+        cursor: pointer;
+        color: white;
+        background-color: #E2211C;
+    }
